@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body { 
+      background: #0a0a0a;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Segoe UI', sans-serif;
+      color: #00ffaa;
+      overflow: hidden;
+    }
+    .container {
+      text-align: center;
+      animation: fadeIn 0.5s ease-in;
+    }
+    .logo {
+      font-size: 3.5em;
+      margin-bottom: 30px;
+      animation: pulse 1.5s infinite;
+    }
+    .text {
+      font-size: 1.2em;
+      opacity: 0;
+      animation: slideUp 0.4s ease-out forwards;
+      animation-delay: 0.3s;
+    }
+    .loading-dots {
+      margin-top: 20px;
+      opacity: 0;
+      animation: fadeIn 0.5s ease-out forwards;
+      animation-delay: 1s;
+    }
+    .dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      margin: 0 4px;
+      background: #00ffaa;
+      border-radius: 50%;
+      animation: dotPulse 1.4s infinite;
+    }
+    .module-loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(10, 10, 10, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+    
+    .module-loader .spinner {
+      width: 50px;
+      height: 50px;
+      border: 3px solid #333;
+      border-top-color: #00ffaa;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    .dot:nth-child(2) { animation-delay: 0.2s; }
+    .dot:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideUp {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+    @keyframes dotPulse {
+      0%, 100% { transform: scale(1); opacity: 0.2; }
+      50% { transform: scale(1.2); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">🔒</div>
+    <div class="text">Zaxora Startuje...</div>
+    <div class="loading-dots">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+{
+  "name": "zaxora_win",
+  "version": "1.1.4",
+  "description": "Zaxora is your personal remote control for your Windows PC – from your phone or browser. Wanna check your RAM, kill apps, run commands, manage your PC or stream your PC's screen? Zaxora got you.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "author": "Raynixx",
+  "license": "ISC",
+  "dependencies": {
+    "ps-list": "^8.1.1",
+    "screenshot-desktop": "^1.15.1"
+  },
+  "devDependencies": {
+    "electron": "^35.2.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.raynixx.zaxora",
+    "productName": "Zaxora",
+    "files": [
+      "**/*",
+      "server.js"
+    ],
+    "asarUnpack": [
+      "server.js"
+    ],
+    "directories": {
+      "buildResources": ""
+    },
+    "win": {
+      "icon": "images/zaxora.ico",
+      "target": "nsis"
+    },
+    "mac": {
+      "icon": "images/zaxora.ico"
+    },
+    "linux": {
+      "icon": "images/zaxora.ico"
+    }
+  }
+}

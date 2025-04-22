@@ -1,0 +1,45 @@
+{
+  "app": {
+    "name": "Zaxora",
+    "description": "Remote Control for Windows PC"
+  },
+  "tray": {
+    "tooltip": "Zaxora - Remote Control",
+    "openClient": "Open Zaxora - Client",
+    "hide": "Hide Zaxora",
+    "restartServer": "Restart Zaxora - Server",
+    "startServer": "Start Zaxora - Server",
+    "stopServer": "Stop Zaxora - Server"
+  },
+  "login": {
+    "title": "Zaxora Login",
+    "passwordPlaceholder": "Enter password",
+    "loginButton": "Login",
+    "invalidPassword": "Invalid password"
+  },
+  "panel": {
+    "title": "Zaxora Panel",
+    "shutdown": "Shutdown",
+    "restart": "Restart",
+    "settings": {
+      "title": "Settings",
+      "port": "Port",
+      "theme": "Theme",
+      "language": "Language",
+      "password": "Password",
+      "publicAccess": "Public Access",
+      "features": "Features"
+    },
+    "features": {
+      "streaming": "Screen Streaming",
+      "shutdown": "Shutdown Control",
+      "restart": "Restart Control"
+    },
+    "messages": {
+      "shutdownConfirm": "Are you sure you want to shutdown?",
+      "restartConfirm": "Are you sure you want to restart?",
+      "serverRestarted": "Server has been restarted",
+      "settingsSaved": "Settings saved successfully"
+    }
+  }
+}

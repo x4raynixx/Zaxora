@@ -1,0 +1,45 @@
+{
+    "app": {
+      "name": "Zaxora",
+      "description": "Zdalne sterowanie komputerem Windows"
+    },
+    "tray": {
+      "tooltip": "Zaxora - Zdalne sterowanie",
+      "openClient": "Otwórz Zaxora - Klient",
+      "hide": "Ukryj Zaxora",
+      "restartServer": "Zrestartuj serwer Zaxora",
+      "startServer": "Uruchom serwer Zaxora",
+      "stopServer": "Zatrzymaj serwer Zaxora"
+    },
+    "login": {
+      "title": "Logowanie Zaxora",
+      "passwordPlaceholder": "Wprowadź hasło",
+      "loginButton": "Zaloguj",
+      "invalidPassword": "Nieprawidłowe hasło"
+    },
+    "panel": {
+      "title": "Panel Zaxora",
+      "shutdown": "Wyłącz",
+      "restart": "Uruchom ponownie",
+      "settings": {
+        "title": "Ustawienia",
+        "port": "Port",
+        "theme": "Motyw",
+        "language": "Język",
+        "password": "Hasło",
+        "publicAccess": "Dostęp publiczny",
+        "features": "Funkcje"
+      },
+      "features": {
+        "streaming": "Streaming ekranu",
+        "shutdown": "Kontrola wyłączania",
+        "restart": "Kontrola restartu"
+      },
+      "messages": {
+        "shutdownConfirm": "Czy na pewno chcesz wyłączyć komputer?",
+        "restartConfirm": "Czy na pewno chcesz zrestartować komputer?",
+        "serverRestarted": "Serwer został zrestartowany",
+        "settingsSaved": "Ustawienia zostały zapisane"
+      }
+    }
+  }
