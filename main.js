@@ -56,7 +56,6 @@ function launchServer(settings) {
   child.unref();
 }
 
-// Function to start the server
 function startServer(forceRestart = false) {
   const settings = loadSettings();
   const port = settings.port;
@@ -215,8 +214,8 @@ async function killProcessOnPort(port, callback) {
     if (proc.cmd.includes(`:${port}`)) {
       console.log(`Zabijam proces ${proc.pid} używający portu ${port}`);
       try {
-        process.kill(proc.pid); // Zatrzymaj proces
-        if (callback) callback(); // Uruchom callback po zakończeniu
+        process.kill(proc.pid);
+        if (callback) callback();
       } catch (err) {
         console.error(`Nie udało się zabić procesu ${proc.pid}:`, err);
       }
