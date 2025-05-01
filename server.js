@@ -8,19 +8,14 @@ const { v4: uuidv4 } = require('uuid');
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-// Setup session middleware with a secret key
 app.use(session({
     secret: require('crypto').randomBytes(24).toString('hex'),
     resave: false,
     saveUninitialized: true
 }));
-
-// Get the APPDATA environment variable and define paths
 const APPDATA_PATH = process.env.APPDATA;
 const SETTINGS_PATH = path.join(APPDATA_PATH, 'Zaxora', 'settings.json');
 
-// Function to get settings from Zaxora settings file in APPDATA
 function get_settings() {
     const appdata = process.env.APPDATA;
     const settings_path = path.join(appdata, 'Zaxora', 'settings.json');
@@ -31,7 +26,6 @@ function get_settings() {
 let settings = get_settings();
 const PORT = settings.port || 8888;
 
-// Function to load settings from SETTINGS_PATH or create default if not exists
 function load_settings() {
     if (!fs.existsSync(SETTINGS_PATH)) {
         const default_settings = { "password": "admin", "token": uuidv4(), "locked": false };
@@ -41,14 +35,12 @@ function load_settings() {
     return JSON.parse(data);
 }
 
-// Function to save settings to SETTINGS_PATH
 function save_settings(settings) {
     fs.writeFileSync(SETTINGS_PATH, JSON.stringify(settings));
 }
 
 settings = load_settings();
 
-// Helper function to get formatted date string "YYYY-MM-DD_HH-MM-SS"
 function getFormattedDate() {
     const now = new Date();
     const year = now.getFullYear();
@@ -59,7 +51,7 @@ function getFormattedDate() {
     const seconds = ("0" + now.getSeconds()).slice(-2);
     return `${year}-${month}-${day}_${hours}-${minutes}-${seconds}`;
 }
-// Helper function to render a template string with optional error injection
+
 function renderTemplateString(template, context = {}) {
     if (template.includes("{% if error %}")) {
         if (context.error) {
@@ -96,8 +88,7 @@ app.get('/panel', (req, res) => {
 
 app.post('/update', (req, res) => {
     const data = req.body;
-    if (data.token === settings.token) {
-        // Update settings object with keys from data
+    if (data.token === settings.token) ({
         Object.keys(data).forEach(key => {
             settings[key] = data[key];
         });
